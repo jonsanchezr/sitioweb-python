@@ -26,4 +26,5 @@ from general import views as general_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', general_views.index, name='index'),
+    path('product', general_views.product, name='product'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
