@@ -25,7 +25,7 @@ SECRET_KEY = 'e0e08cgpf)3(e#yj656j0-vde-qfqo=ixt0oa!h0^=lss!fweb'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mrodistribuidora.com']
 
 # Application definition
 
