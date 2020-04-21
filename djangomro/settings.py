@@ -25,7 +25,7 @@ SECRET_KEY = 'e0e08cgpf)3(e#yj656j0-vde-qfqo=ixt0oa!h0^=lss!fweb'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['mrodistribuidora.com']
+ALLOWED_HOSTS = ['mrodistribuidora.com','localhost']
 
 # Application definition
 
@@ -78,12 +78,12 @@ WSGI_APPLICATION = 'djangomro.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'pavan',
-        'USER': 'sa',
-        'PASSWORD': 'mpavan',
-        'HOST': '200.94.198.21',
-        'PORT': '5432',
+        #'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        #'NAME': 'pavan',
+        #'USER': 'sa',
+        #'PASSWORD': 'mpavan',
+        #'HOST': '200.94.198.21',
+        #'PORT': '5432',
     }
 }
 
