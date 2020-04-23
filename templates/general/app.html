@@ -88,11 +88,11 @@
                                 <div class="main-menu  d-none d-lg-block">
                                     <nav>
                                         <ul id="navigation">
-                                            <li><a class="active" href="/">Inicio</a></li>
-                                            <li><a href="#services">Servicios</a></li>
-                                            <li><a href="#products">Productos</a></li>
-                                            <li><a href="#industries">Industrias</a></li>
-                                            <li><a href="#contact">Contacto</a></li>
+                                            <li><a class="active" href="{% url 'index' %}">Inicio</a></li>
+                                            <li><a href="{% url 'index' %}#services">Servicios</a></li>
+                                            <li><a href="{% url 'productos' %}">Productos</a></li>
+                                            <li><a href="{% url 'index' %}#industries">Industrias</a></li>
+                                            <li><a href="{% url 'index' %}#contact">Contacto</a></li>
                                         </ul>
                                     </nav>
                                 </div>
@@ -112,6 +112,44 @@
 
     {% block content %}
     {% endblock content %}
+
+    <div class="contact_form_quote" id="contact" style="padding-bottom: 50px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-5 col-lg-6">
+                    <div class="form_wrap">
+                        <h3>Contacto</h3>
+                        <form action="#">
+                            <input type="text" placeholder="Su Nombre" required="">
+                            <div class="row">
+                                <div class="col-xl-6 col-lg-6">
+                                    <input type="email" placeholder="Email" required="">
+                                </div>
+                                <div class="col-xl-6 col-lg-6">
+                                    <input type="text" placeholder="Telefono">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-6 col-lg-6">
+                                    <input type="text" placeholder="Numero de Parte">
+                                </div>
+                                <div class="col-xl-6 col-lg-6">
+                                    <input type="text" placeholder="Fabricante">
+                                </div>
+                            </div>                    
+                            <textarea name="#" id="" cols="30" rows="10" placeholder="Mensaje / Descripción / Cantidad" required=""></textarea>
+                            <button class="boxed-btn3">Enviar</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-xl-6 offset-xl-1 col-lg-6">
+                    <div class="contact_thumb">
+                        <img src="{% static 'img/banner/contact_thumb.png' %}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- footer start -->
     <footer class="footer">

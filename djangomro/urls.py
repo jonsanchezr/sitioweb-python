@@ -20,11 +20,13 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 from general import views as general_views
-
+from applications.products.views import productos, verProducto, send
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', general_views.index, name='index'),
-    path('product', general_views.product, name='product'),
+    path('productos/', productos, name = 'productos'),
+    path('producto/<str:id>/', verProducto, name = 'verProducto'),
+    path('send/', send, name = 'send'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

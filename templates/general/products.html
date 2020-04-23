@@ -1,0 +1,127 @@
+{% extends "general/app.html" %}
+
+{% block content %}
+
+{% load static %}
+
+<!-- bradcam_area  -->
+<div class="bradcam_area bradcam_bg_1">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-12">
+        <div class="bradcam_text">
+          <h3>
+            Proveemos refacciones
+            <br>
+            que tu empresa necesita
+          </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/ bradcam_area  -->
+
+<!-- team_area  -->
+<div class="team_area" style="padding: 0;">
+  <div class="container">
+    <div class="border_bottom">
+      
+      <div class="row">
+        <div class="col-xl-12">
+          <div class="section_title mb-40 text-center">
+            
+          </div>
+        </div>
+      </div>
+  
+      <div class="row">
+    
+        {% for c in comeisu %}
+        <div class="col-xl-3 col-lg-3 col-md-6">
+          <a href="/producto/{{ c.cla_isu }}">
+            <div class="single_team" style="border: 1px solid #E8E8E8;">
+              <div class="team_thumb" style="margin-bottom: 0;border-radius: 0;">
+                <img src="{% static 'img/no_img.jpg' %}" alt="">
+              </div>
+          
+              <div class="team_info text-center">
+                <div class="single-post">
+                  <div class="section-top-border" style="padding: 0;">
+                    <div class="progress-table-wrap" style="overflow-x: hidden;">
+                      <div class="progress-table" style="width: 100%;min-width: 100%;">
+                        <div class="table-head">
+                          <div class="serial" style="width: 100%;padding: 0;">
+                            {{ c.cla_isu }}
+                          </div>
+                        </div>
+
+                        <div class="table-row">
+                          <div class="serial" style="width: 100%;padding: 0;display: block;">
+                            {{ c.des_isu }}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        {% endfor %}
+    
+      </div>
+
+      <nav class="blog-pagination justify-content-center d-flex" style="margin-top: 0px;padding-bottom: 50px;">
+        <ul class="pagination">
+
+          {% if comeisu.has_previous %}
+            <li class="page-item">
+              <a href="?page=1" class="page-link" aria-label="Previous">
+                <i class="ti-angle-double-left"></i>
+              </a>
+            </li>
+            <li class="page-item">
+              <a href="?page={{ comeisu.previous_page_number }}" class="page-link" aria-label="Previous">
+                <i class="ti-angle-left"></i>
+              </a>
+            </li>
+          {% endif %}
+
+          {% for num in comeisu.paginator.page_range %}
+            {% if comeisu.number == num %}
+              <li class="page-item active">
+                <a href="#" class="page-link">{{ num }}</a>
+              </li>
+            
+            {% elif num > comeisu.number|add:'-5' and num < comeisu.number|add:'5' %}
+              <li class="page-item">
+                <a href="?page={{ num }}" class="page-link">{{ num }}</a>
+              </li>
+
+            {% endif %}
+          {% endfor %}
+
+          {% if comeisu.has_next %}
+            <li class="page-item">
+              <a href="?page={{ comeisu.next_page_number }}" class="page-link" aria-label="Next">
+                <i class="ti-angle-right"></i>
+              </a>
+            </li>
+            <li class="page-item">
+              <a href="?page={{ comeisu.paginator.num_pages }}" class="page-link" aria-label="Next">
+                <i class="ti-angle-double-right"></i>
+              </a>
+            </li>
+          {% endif %}
+        </ul>
+      </nav>
+
+    </div>
+
+  </div>
+</div>
+<!-- /team_area  -->
+
+{% endblock content %}

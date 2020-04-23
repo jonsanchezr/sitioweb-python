@@ -25,7 +25,7 @@ SECRET_KEY = 'e0e08cgpf)3(e#yj656j0-vde-qfqo=ixt0oa!h0^=lss!fweb'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['mrodistribuidora.com','localhost']
+ALLOWED_HOSTS = ['mrodistribuidora.com','localhost','104.131.152.222']
 
 # Application definition
 
@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Local apps
     'general',
-    'applications.products'
+    'applications.products',
 ]
 
 MIDDLEWARE = [
@@ -48,7 +48,7 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
 ROOT_URLCONF = 'djangomro.urls'
@@ -78,12 +78,12 @@ WSGI_APPLICATION = 'djangomro.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 DATABASES = {
     'default': {
-        #'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        #'NAME': 'pavan',
-        #'USER': 'sa',
-        #'PASSWORD': 'mpavan',
-        #'HOST': '200.94.198.21',
-        #'PORT': '5432',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'pavan',
+        'USER': 'sa',
+        'PASSWORD': 'mpavan',
+        'HOST': '200.94.198.21',
+        'PORT': '5432',
     }
 }
 
@@ -105,6 +105,13 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+EMAIL_BACKEND = 'Django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_Host = 'smtp.gmail.com'
+EMAIL_Host_USER = 'jonathanch1991@gmail.com'
+EMAIL_Host_PASSWORD = 'jonathan1991'
+EMAIL_PORT = 587
 
 
 # Internationalization
