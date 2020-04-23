@@ -34,9 +34,25 @@
           </div>
         </div>
       </div>
+
+      <div class="row">
+        <div style="margin-bottom: 20px;" class="col-xl-3 col-lg-3 col-md-3">
+        </div>
+
+        <div style="margin-bottom: 20px;" class="col-xl-6 col-lg-6 col-md-6">
+          <aside class="single_sidebar_widget search_widget">
+            <form action="{% url 'productos' %}" method="GET" class="newsletter_form">
+              <input type="text" placeholder="Productos" style="border: 1px solid #E8E8E8;border-radius: 30px;height: 50px;" name="buscar">
+              <button type="submit" style="background: #5DB2FF;border-radius: 30px;">Buscar</button>
+            </form>
+          </aside>
+        </div>
+
+        <div style="margin-bottom: 20px;" class="col-xl-3 col-lg-3 col-md-3">
+        </div>
+      </div>
   
       <div class="row">
-    
         {% for c in comeisu %}
         <div class="col-xl-3 col-lg-3 col-md-6">
           <a href="/producto/{{ c.cla_isu }}">

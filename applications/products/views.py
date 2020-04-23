@@ -6,8 +6,15 @@ from .models import Comeisu
 # Create your views here.
 
 def productos(request):
-
 	comeisu = Comeisu.objects.all()
+
+	if request.GET.get('buscar'):
+		buscar = request.GET.get('buscar')
+		filtered = comeisu.filter(cla_isu__contains=buscar.upper())
+		contexto = {
+			'comeisu':filtered
+		}
+		return render(request,'general/products.html',contexto)
 
 	paginator = Paginator(comeisu, 20)
 	page_number = request.GET.get('page')
