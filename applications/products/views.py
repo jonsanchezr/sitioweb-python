@@ -12,7 +12,8 @@ def productos(request):
 		buscar = request.GET.get('buscar')
 		filtered = comeisu.filter(cla_isu__contains=buscar.upper())
 		contexto = {
-			'comeisu':filtered
+			'comeisu':filtered,
+			'buscar':buscar
 		}
 		return render(request,'general/products.html',contexto)
 
@@ -21,7 +22,8 @@ def productos(request):
 	page_obj = paginator.get_page(page_number)
 
 	contexto = {
-		'comeisu': page_obj
+		'comeisu': page_obj,
+		'buscar':''
 	}
 
 	return render(request, 'general/products.html',contexto)
