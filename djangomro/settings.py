@@ -25,7 +25,7 @@ SECRET_KEY = 'e0e08cgpf)3(e#yj656j0-vde-qfqo=ixt0oa!h0^=lss!fweb'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['mrodistribuidora.com','localhost','104.131.152.222']
+ALLOWED_HOSTS = ['mrodistribuidora.com','127.0.0.1','localhost','104.131.152.222']
 
 # Application definition
 
