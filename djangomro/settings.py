@@ -25,7 +25,7 @@ SECRET_KEY = 'e0e08cgpf)3(e#yj656j0-vde-qfqo=ixt0oa!h0^=lss!fweb'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['mrodistribuidora.com','127.0.0.1','localhost','104.131.152.222']
+ALLOWED_HOSTS = ['mrodistribuidora.com','127.0.0.1','localhost','159.65.184.208']
 
 # Application definition
 
@@ -79,11 +79,11 @@ WSGI_APPLICATION = 'djangomro.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'pavan',
-        'USER': 'sa',
-        'PASSWORD': 'mpavan',
-        'HOST': '187.188.48.210',
-        'PORT': '5432',
+        'NAME': '',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '',
+        'PORT': '',
     }
 }
 
@@ -105,14 +105,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
-EMAIL_BACKEND = 'Django.core.mail.backends.smtp.EmailBackend'
-EMAIL_USE_TLS = True
-EMAIL_Host = 'smtp.gmail.com'
-EMAIL_Host_USER = 'jonathanch1991@gmail.com'
-EMAIL_Host_PASSWORD = 'jonathan1991'
-EMAIL_PORT = 587
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
@@ -143,4 +135,4 @@ STATICFILES_FINDERS = [
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-# LOGIN_URL = '/users/login/'
+LOGIN_URL = 'login'

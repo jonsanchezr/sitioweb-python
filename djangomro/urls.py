@@ -20,7 +20,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 from general import views as general_views
-from applications.products.views import productos, verProducto, send
+from applications.products.views import productos, verProducto
 
 
 urlpatterns = [
@@ -28,5 +28,4 @@ urlpatterns = [
     path('', general_views.index, name='index'),
     path('productos/', productos, name = 'productos'),
     path('producto/<str:id>/', verProducto, name = 'verProducto'),
-    path('send/', send, name = 'send'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
