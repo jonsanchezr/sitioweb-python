@@ -1,5 +1,17 @@
 {% extends "general/app.html" %}
 
+{% block seo %}
+<title>{{comeisu.cla_isu}} - MRO Distribuidora</title>
+<meta name="description" content="{{comeisu.des_isu}}. En MRO Distribuidora ofrecemos todas las refacciones que su empresa necesita con los mejores precios especiales en líneas de productos de la mejor calidad.">
+<meta property="og:title" content="{{comeisu.cla_isu}} - MRO Distribuidora" />
+<meta property="og:description" content="{{comeisu.des_isu}}" />
+<meta property="og:type" content="productos" />
+<meta property="og:site_name" content="MRO Distribuidora" />
+
+<meta name="twitter:title" content="{{comeisu.cla_isu}} - MRO Distribuidora" />
+<meta name="twitter:description" content="{{comeisu.des_isu}}" />
+{% endblock seo %}
+
 {% block content %}
 
 {% load static %}

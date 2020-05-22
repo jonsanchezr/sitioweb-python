@@ -28,4 +28,5 @@ urlpatterns = [
     path('', general_views.index, name='index'),
     path('productos/', productos, name = 'productos'),
     path('producto/<str:id>/', verProducto, name = 'verProducto'),
+	path('sitemap.xml', general_views.sitemap, name = 'sitemap'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

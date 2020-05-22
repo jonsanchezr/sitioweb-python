@@ -10,3 +10,8 @@ def product(request):
 
 def products(request):
     return render(request, 'general/products.html', {'title':'Products'})
+
+def sitemap(request):
+	return render(request, 'general/sitemap.xml', {
+        'text': 'text',
+    }, content_type='application/xhtml+xml')

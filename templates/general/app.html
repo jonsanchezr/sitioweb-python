@@ -3,9 +3,13 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>MRO Distribuidora</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="google-site-verification" content="llP1zrnXNTrBcYiM85A8mOuktEBkAJaXuu0ag1EaayA" />
+	
+	{% block seo %}
+	{% endblock seo %}
+
 
     {% load static %}
     <!-- <link rel="manifest" href="site.webmanifest"> -->
@@ -203,7 +207,6 @@
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <script src="{% static 'js/owl.carousel.min.js' %}"></script>
     <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
-    <script src="{% static 'js/ajax-form.js' %}"></script>
     <script src="{% static 'js/waypoints.min.js' %}"></script>
     <script src="{% static 'js/jquery.counterup.min.js' %}"></script>
     <script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
@@ -213,7 +216,6 @@
     <script src="{% static 'js/nice-select.min.js' %}"></script>
     <script src="{% static 'js/jquery.slicknav.min.js' %}"></script>
     <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
-    <script src="{% static 'js/plugins.js' %}"></script>
     <script src="{% static 'js/gijgo.min.js' %}"></script>
     <script src="{% static 'js/slick.min.js' %}"></script>
     <!--contact js-->
@@ -221,7 +223,6 @@
     <script src="{% static 'js/jquery.ajaxchimp.min.js' %}"></script>
     <script src="{% static 'js/jquery.form.js' %}"></script>
     <script src="{% static 'js/jquery.validate.min.j' %}s"></script>
-    <script src="{% static 'js/mail-script.js' %}"></script>
 
     <script src="{% static 'js/main.js' %}"></script>
     <script type="text/javascript">
@@ -232,7 +233,7 @@
 document.getElementById('alert').style = 'position: fixed;bottom: 10px;z-index: 999;left: 10px;';
 
 const data = new FormData(document.getElementById('formulario'));
-fetch('http://internationalparts.mx/mail/', {
+fetch('https://internationalparts.mx/mail/index.php', {
    method: 'POST',
    body: data
 })
