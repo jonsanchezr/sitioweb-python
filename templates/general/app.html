@@ -134,6 +134,9 @@
                                 </div>
                             </div>                    
                             <textarea name="message" id="" cols="30" rows="10" placeholder="Mensaje / Descripción / Cantidad" required=""></textarea>
+                            <div class="col-xl-12 col-lg-12">
+                                <input type="file" name="uploadedFile" />
+                            </div>
                             <button type="submit" id="formButton" class="boxed-btn3">Enviar</button>
                         </form>
                     </div>
@@ -202,39 +205,43 @@
         function showProducts() {
             document.getElementById ('more_products').style = '';
         }
+        
         function send() {
-document.getElementById('alert').style = 'position: fixed;bottom: 10px;z-index: 999;left: 10px;';
+			document.getElementById('alert').style = 'position: fixed;bottom: 10px;z-index: 999;left: 10px;';
 
-const data = new FormData(document.getElementById('formulario'));
-fetch('https://internationalparts.mx/mail/index.php', {
-   method: 'POST',
-   body: data
-})
-.then(function(response) {
-   if(response.ok) {
-       return false;
-   } else {
-       throw "Error en la llamada Ajax";
-   }
+			var input = document.querySelector('input[type="file"]')
 
-})
-.then(function(texto) {
-   console.log(texto);
-})
-.catch(function(err) {
-   console.log(err);
-});
+			const data = new FormData(document.getElementById('formulario'));
+			for (const file of input.files) {
+			  data.append('files',file,file.name)
+			}
+			fetch('https://internationalparts.mx/mail/index.php', {
+   				method: 'POST',
+   				body: data
+			})
+			.then(function(response) {
+   				if(response.ok) {
+       				return false;
+   				} else {
+       				throw "Error en la llamada Ajax";
+   				}
+			})
+			.then(function(texto) {
+   				console.log(texto);
+			})
+			.catch(function(err) {
+   				console.log(err);
+			});
 
-document.getElementById('formButton').disabled = true;
-setTimeout(funcion,8000);
+			document.getElementById('formButton').disabled = true;
+			setTimeout(funcion,8000);
+		}
 
-}
-
-function funcion(){
-  if (document.getElementById('alert')) {
-    document.getElementById('alert').style.display = 'none';
-  }
-}
+		function funcion(){
+  			if (document.getElementById('alert')) {
+    			document.getElementById('alert').style.display = 'none';
+  			}
+		}
     </script>
 </body>
 
