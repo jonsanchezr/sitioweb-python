@@ -29,4 +29,5 @@ urlpatterns = [
     path('productos/', productos, name = 'productos'),
     path('producto/<str:id>/', verProducto, name = 'verProducto'),
 	path('sitemap.xml', general_views.sitemap, name = 'sitemap'),
+	path('googleec4d9ed38b3f9dba.html', general_views.google, name = 'google'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -135,7 +135,7 @@
                             </div>                    
                             <textarea name="message" id="" cols="30" rows="10" placeholder="Mensaje / Descripción / Cantidad" required=""></textarea>
                             <div class="col-xl-12 col-lg-12">
-                                <input type="file" name="uploadedFile" />
+                                <input type="file" name="files" multiple="">
                             </div>
                             <button type="submit" id="formButton" class="boxed-btn3">Enviar</button>
                         </form>
@@ -221,7 +221,6 @@
 			})
 			.then(function(response) {
    				if(response.ok) {
-       				return false;
    				} else {
        				throw "Error en la llamada Ajax";
    				}

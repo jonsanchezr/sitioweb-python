@@ -15,3 +15,6 @@ def sitemap(request):
 	return render(request, 'general/sitemap.xml', {
         'text': 'text',
     }, content_type='application/xhtml+xml')
+
+def google(request):
+    return render(request, 'general/googleec4d9ed38b3f9dba.html', {'title':'google'})
